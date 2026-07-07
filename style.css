@@ -1,241 +1,64 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    overflow:hidden;
-    background:linear-gradient(
-        180deg,
-        #02030d 0%,
-        #05091b 35%,
-        #09142f 70%,
-        #01040a 100%
-    );
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
+body {
+    margin: 0;
+    height: 100vh;
+    background: #111827;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
-/* Galaxy glow */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-        radial-gradient(circle at 20% 30%, rgba(0,255,255,.12), transparent 35%),
-        radial-gradient(circle at 80% 20%, rgba(0,120,255,.18), transparent 30%),
-        radial-gradient(circle at 60% 80%, rgba(0,180,255,.12), transparent 35%);
-    animation:galaxyMove 20s ease-in-out infinite alternate;
-    pointer-events:none;
+.login-box {
+    width: 380px;
+    background: #1f2937;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    text-align: center;
 }
 
-@keyframes galaxyMove{
-    from{
-        transform:scale(1) translateY(0);
-    }
-    to{
-        transform:scale(1.15) translateY(-30px);
-    }
+h1 {
+    margin-bottom: 25px;
+    color: #facc15;
 }
 
-/* Stars */
-
-#stars{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    pointer-events:none;
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background: #374151;
+    color: white;
+    font-size: 16px;
 }
 
-#stars span{
-    position:absolute;
-    background:white;
-    border-radius:50%;
-    box-shadow:
-        0 0 6px white,
-        0 0 12px cyan;
-    animation:twinkle infinite ease-in-out;
+input::placeholder {
+    color: #cbd5e1;
 }
 
-@keyframes twinkle{
-    0%,100%{
-        opacity:.2;
-        transform:scale(.7);
-    }
-
-    50%{
-        opacity:1;
-        transform:scale(1.5);
-    }
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
 }
 
-/* Center panel */
-
-.container{
-    width:450px;
-    z-index:5;
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #facc15;
+    color: #111827;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.card{
-
-    margin-top:20px;
-
-    backdrop-filter:blur(20px);
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,255,255,.18);
-
-    border-radius:18px;
-
-    padding:28px;
-
-    box-shadow:
-        0 0 30px rgba(0,180,255,.3),
-        0 0 80px rgba(0,80,255,.15);
-
-    animation:fade 1s ease;
-}
-
-@keyframes fade{
-
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-
-    to{
-        opacity:1;
-        transform:none;
-    }
-
-}
-
-h1{
-    text-align:center;
-    font-size:42px;
-    color:#7ddcff;
-    text-shadow:
-        0 0 10px #00d9ff,
-        0 0 25px #00aaff;
-}
-
-.subtitle{
-    text-align:center;
-    color:#b9dfff;
-    margin-top:10px;
-    margin-bottom:20px;
-}
-
-.box{
-
-    background:rgba(255,255,255,.05);
-
-    border-radius:12px;
-
-    padding:18px;
-
-    margin-bottom:15px;
-
-    transition:.3s;
-
-}
-
-.box:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:
-        0 0 20px rgba(0,255,255,.3);
-
-}
-
-.box h2{
-    color:#8ce9ff;
-    margin-bottom:8px;
-}
-
-.box p{
-    color:#d9e9ff;
-}
-
-.buttons{
-
-    display:flex;
-
-    gap:15px;
-
-    margin-top:25px;
-
-}
-
-.btn{
-
-    flex:1;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    padding:14px;
-
-    border-radius:10px;
-
-    color:white;
-
-    background:linear-gradient(
-        90deg,
-        #00bfff,
-        #0078ff
-    );
-
-    transition:.3s;
-
-    font-weight:bold;
-
-    box-shadow:
-        0 0 15px rgba(0,191,255,.4);
-
-}
-
-.btn:hover{
-
-    transform:translateY(-3px) scale(1.03);
-
-    box-shadow:
-        0 0 25px #00d4ff,
-        0 0 45px #0099ff;
-
-}
-
-/* Mouse glow */
-
-.mouse-glow{
-
-    position:fixed;
-
-    width:250px;
-
-    height:250px;
-
-    border-radius:50%;
-
-    background:radial-gradient(circle,
-        rgba(0,200,255,.22),
-        transparent 70%);
-
-    pointer-events:none;
-
-    transform:translate(-50%,-50%);
-
-    transition:left .08s linear,
-               top .08s linear;
-
-    z-index:0;
-
+button:hover {
+    background: #fde047;
 }
